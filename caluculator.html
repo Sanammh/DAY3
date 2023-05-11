@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>simple caluculator</title>
+    <style>
+        body{
+            display: flexbox;
+            flex-direction: column-reverse;
+            justify-items: center;
+            justify-content: center;
+            background-color:beige;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-variant: small-caps;
+        }
+        h1{
+            text-align: center;
+            align-items: flex-end;
+        }
+        input{
+            background-color: whitesmoke;
+            
+            text-align: center;
+            text-decoration: double;
+        }
+        select{
+            color:red ;
+            background-color:wheat;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style: italic;
+        }
+        button{
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" id="num1">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="*">*</option>
+    </select>
+    <input type="number" id="num2">
+    <button onclick="calculate()">click for answer</button>
+    <h1 id="result"></h1>
+</body>
+<script>
+
+    function add(num1, num2) {
+        return num1 + num2;
+
+    }
+    function subtract(num1, num2) {
+        return num1 - num2;
+
+    }
+    function divide(num1, num2) {
+        return num1 / num2;
+
+    }
+    function multply(num1, num2) {
+        return num1 * num2;
+
+    }
+
+    function calculate() {
+        var num1 = parseFloat(document.getElementById(num1).value);
+        var num2 = parseFloat(document.getElementById(num2).value);
+        var opr = document.getElementById("operator").value;
+        var result;
+        switch (operator) {
+            case "+":
+                result = add(num1, num2);
+                break;
+            case "-":
+                result = subtract(num1, num2);
+                break;
+            case "/":
+                result = divide(num1, num2);
+                break;
+            case "*":
+                result = multiply(num1, num2);
+                break;
+            default:
+                result = "input invalid";
+        }
+    document.getElementById("result").innerHTML = result;
+
+    }
+
+</script>
+
+</html>
